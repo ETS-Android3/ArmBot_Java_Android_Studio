@@ -21,4 +21,17 @@
     <string name="controller_Rotation_text">Rotation</string>
     <string name="controller_Open_Closed_text">Open  / Closed</string>
     <string name="controller_reset_button_text">Reset</string>
+
+    <string name="controller_up_arrow">Up Arrow</string>
+    <string name="controller_right_arrow">Right Arrow</string>
+    <string name="controller_left_arrow">Left Arrow</string>
+    <string name="controller_down_arrow">Down Arrow</string>
+    <string name="controller_forward_arrow">Forward Arrow</string>
+    <string name="controller_backward_arrow">Backward Arrow</string>
+
+    <string name="controller_forward_arrow_text">Forward</string>
+    <string name="controller_backward_arrow_text">Backward</string>
+
+    <string name="controller_seekbar_buttons_text">Seekbars</string>
+    <string name="controller_buttons_text">Buttons</string>
 </resources>

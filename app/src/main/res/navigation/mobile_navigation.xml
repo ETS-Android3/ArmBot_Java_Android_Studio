@@ -12,14 +12,28 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_nav_home_to_nav_controller"
-            app:destination="@id/nav_gallery" />
+            app:destination="@id/nav_controller_seekbars" />
     </fragment>
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.armbot.ui.controller.ControllerFragment"
+        android:id="@+id/nav_controller_buttons"
+        android:name="com.example.armbot.ui.controller_buttons.ControllerButtonsFragment"
         android:label="@string/menu_controller"
-        tools:layout="@layout/fragment_controller" />
+        tools:layout="@layout/fragment_controller_buttons">
+        <action
+            android:id="@+id/action_nav_button_controller_to_nav_seekbar_controller"
+            app:destination="@id/nav_controller_seekbars" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_controller_seekbars"
+        android:name="com.example.armbot.ui.controller_seekbars.ControllerSeekbarsFragment"
+        android:label="@string/menu_controller"
+        tools:layout="@layout/fragment_controller_seekbars" >
+        <action
+            android:id="@+id/action_nav_seekbar_controller_to_nav_button_controller"
+            app:destination="@id/nav_controller_buttons" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_settings"
