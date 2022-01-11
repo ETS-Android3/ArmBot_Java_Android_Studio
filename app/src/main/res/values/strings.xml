@@ -28,9 +28,17 @@
     <string name="controller_down_arrow">Down Arrow</string>
     <string name="controller_forward_arrow">Forward Arrow</string>
     <string name="controller_backward_arrow">Backward Arrow</string>
+    <string name="controller_open_arrow">Open Arrow</string>
+    <string name="controller_close_arrow">Close Arrow</string>
 
+    <string name="controller_up_arrow_text">Up</string>
+    <string name="controller_right_arrow_text">Right</string>
+    <string name="controller_left_arrow_text">Left</string>
+    <string name="controller_down_arrow_text">Down</string>
     <string name="controller_forward_arrow_text">Forward</string>
     <string name="controller_backward_arrow_text">Backward</string>
+    <string name="controller_open_arrow_text">Open</string>
+    <string name="controller_close_arrow_text">Close</string>
 
     <string name="controller_seekbar_buttons_text">Seekbars</string>
     <string name="controller_buttons_text">Buttons</string>
