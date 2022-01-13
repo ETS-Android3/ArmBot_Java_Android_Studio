@@ -40,13 +40,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.83" />
+        app:layout_constraintVertical_bias="0.9" />
 
     <ImageButton
         android:id="@+id/imageButtonForwardArrow"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:background="@drawable/arrow"
+        android:backgroundTint="@color/blue"
         android:contentDescription="@string/controller_forward_arrow"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -62,6 +63,7 @@
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:background="@drawable/arrow"
+        android:backgroundTint="@color/blue"
         android:contentDescription="@string/controller_up_arrow"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -77,6 +79,7 @@
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:background="@drawable/arrow"
+        android:backgroundTint="@color/blue"
         android:contentDescription="@string/controller_left_arrow"
         android:rotation="-90"
         android:scaleType="fitXY"
@@ -94,6 +97,7 @@
         android:layout_height="65dp"
         android:layout_marginEnd="100dp"
         android:background="@drawable/arrow"
+        android:backgroundTint="@color/blue"
         android:contentDescription="@string/controller_close_arrow"
         android:rotation="-90"
         android:scaleType="fitXY"
@@ -109,6 +113,7 @@
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:background="@drawable/arrow"
+        android:backgroundTint="@color/blue"
         android:contentDescription="@string/controller_down_arrow"
         android:rotation="180"
         android:scaleType="fitXY"
@@ -125,6 +130,7 @@
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:background="@drawable/arrow"
+        android:backgroundTint="@color/blue"
         android:contentDescription="@string/controller_backward_arrow"
         android:rotation="180"
         android:scaleType="fitXY"
@@ -179,6 +185,7 @@
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:background="@drawable/arrow"
+        android:backgroundTint="@color/blue"
         android:contentDescription="@string/controller_right_arrow"
         android:rotation="90"
         android:scaleType="fitXY"
@@ -196,6 +203,7 @@
         android:layout_height="65dp"
         android:layout_marginStart="100dp"
         android:background="@drawable/arrow"
+        android:backgroundTint="@color/blue"
         android:contentDescription="@string/controller_open_arrow"
         android:rotation="90"
         android:scaleType="fitXY"
@@ -217,6 +225,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.9" />
+        app:layout_constraintVertical_bias="0.97" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

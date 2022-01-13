@@ -23,17 +23,28 @@
         <entry key="..\:/Users/Antho/AndroidStudioProjects/ArmBot/app/src/main/res/menu/main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Antho/AndroidStudioProjects/ArmBot/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/Antho/AndroidStudioProjects/ArmBot/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Antho/Documents/GitHub/ArmBot_Java_Android_Studio/app/src/main/res/drawable/ic_baseline_bluetooth_24.xml" value="0.2703125" />
+        <entry key="..\:/Users/Antho/Documents/GitHub/ArmBot_Java_Android_Studio/app/src/main/res/drawable/ic_baseline_bluetooth_searching_24.xml" value="0.2703125" />
+        <entry key="..\:/Users/Antho/Documents/GitHub/ArmBot_Java_Android_Studio/app/src/main/res/drawable/ic_bluetooth_searching.xml" value="0.2703125" />
+        <entry key="..\:/Users/Antho/Documents/GitHub/ArmBot_Java_Android_Studio/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.2703125" />
+        <entry key="..\:/Users/Antho/Documents/GitHub/ArmBot_Java_Android_Studio/app/src/main/res/drawable/side_nav_bar.xml" value="0.13645833333333332" />
+        <entry key="..\:/Users/Antho/Documents/GitHub/ArmBot_Java_Android_Studio/app/src/main/res/layout/activity_device_list.xml" value="0.2" />
         <entry key="..\:/Users/Antho/Documents/GitHub/ArmBot_Java_Android_Studio/app/src/main/res/layout/activity_main.xml" value="0.15307971014492755" />
         <entry key="..\:/Users/Antho/Documents/GitHub/ArmBot_Java_Android_Studio/app/src/main/res/layout/app_bar_main.xml" value="0.15307971014492755" />
         <entry key="..\:/Users/Antho/Documents/GitHub/ArmBot_Java_Android_Studio/app/src/main/res/layout/content_main.xml" value="0.15307971014492755" />
+        <entry key="..\:/Users/Antho/Documents/GitHub/ArmBot_Java_Android_Studio/app/src/main/res/layout/device_list_item.xml" value="0.16145833333333334" />
         <entry key="..\:/Users/Antho/Documents/GitHub/ArmBot_Java_Android_Studio/app/src/main/res/layout/fragment_controller.xml" value="0.4" />
         <entry key="..\:/Users/Antho/Documents/GitHub/ArmBot_Java_Android_Studio/app/src/main/res/layout/fragment_controller_buttons.xml" value="0.4" />
         <entry key="..\:/Users/Antho/Documents/GitHub/ArmBot_Java_Android_Studio/app/src/main/res/layout/fragment_controller_seekbars.xml" value="0.2" />
         <entry key="..\:/Users/Antho/Documents/GitHub/ArmBot_Java_Android_Studio/app/src/main/res/layout/fragment_home.xml" value="0.15307971014492755" />
         <entry key="..\:/Users/Antho/Documents/GitHub/ArmBot_Java_Android_Studio/app/src/main/res/layout/fragment_settings.xml" value="0.15307971014492755" />
+        <entry key="..\:/Users/Antho/Documents/GitHub/ArmBot_Java_Android_Studio/app/src/main/res/layout/message_layout.xml" value="0.2341485507246377" />
         <entry key="..\:/Users/Antho/Documents/GitHub/ArmBot_Java_Android_Studio/app/src/main/res/layout/nav_header_main.xml" value="0.15307971014492755" />
         <entry key="..\:/Users/Antho/Documents/GitHub/ArmBot_Java_Android_Studio/app/src/main/res/menu/activity_main_drawer.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Antho/Documents/GitHub/ArmBot_Java_Android_Studio/app/src/main/res/menu/main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Antho/Documents/GitHub/ArmBot_Java_Android_Studio/app/src/main/res/menu/menu_device_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Antho/Documents/GitHub/ArmBot_Java_Android_Studio/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1828125" />
+        <entry key="..\:/Users/Antho/Documents/GitHub/ArmBot_Java_Android_Studio/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1828125" />
       </map>
     </option>
   </component>
