@@ -24,7 +24,7 @@
 
     <string name="controller_configuration_text">Control the robotic arm with the following widgets:</string>
     <string name="controller_Right_Left_text">Right / Left</string>
-    <string name="controller_Back_Front_text">Back  / Front</string>
+    <string name="controller_Back_Front_text">Backward / Forward</string>
     <string name="controller_Up_Down_text">Up    / Down</string>
     <string name="controller_Rotation_text">Rotation</string>
     <string name="controller_Open_Closed_text">Open  / Closed</string>

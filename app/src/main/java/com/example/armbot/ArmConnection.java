@@ -28,7 +28,7 @@ public class ArmConnection extends AppCompatActivity {
     private AcceptThread acceptThread;
     private ConnectedThread connectedThread;
 
-    private final UUID APP_UUID = UUID.fromString("82ac3af6-9acf-4e20-aab7-0439291e72ebs");
+    private final UUID APP_UUID = UUID.fromString("38d46a42-bda1-4a6e-9cd4-cfc4b8056203");
     private final String APP_NAME = "ArmBot";
 
     public static final int STATE_NONE = 0;
@@ -57,7 +57,6 @@ public class ArmConnection extends AppCompatActivity {
     public synchronized void setState(int state) {
         this.state = state;
         handler.obtainMessage(MainActivity.MESSAGE_STATE_CHANGED, state, -1).sendToTarget();
-        System.out.println("State:" + state);
     }
 
     private synchronized void start() {

@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_nav_home_to_nav_controller"
-            app:destination="@id/nav_controller_seekbars" />
+            app:destination="@id/nav_controller_buttons" />
     </fragment>
 
     <fragment

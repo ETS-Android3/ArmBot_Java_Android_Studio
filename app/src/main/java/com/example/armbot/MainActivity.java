@@ -2,6 +2,7 @@ package com.example.armbot;
 
 import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothHeadset;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -107,6 +108,13 @@ public class MainActivity extends AppCompatActivity {
         if (getSupportActionBar().getSubtitle() == "Bluetooth Disabled"){
             if (bluetoothAdapter.isEnabled()) {
                 getSupportActionBar().setSubtitle("");
+            }
+        }
+        if(bluetoothAdapter.getProfileConnectionState(BluetoothHeadset.HEADSET) != BluetoothAdapter.STATE_CONNECTED){
+            getSupportActionBar().setSubtitle("Not Connected");
+        } else {
+            if(getSupportActionBar().getSubtitle() == ""){
+                getSupportActionBar().setSubtitle("Connected: " + connectedDevice);
             }
         }
     }

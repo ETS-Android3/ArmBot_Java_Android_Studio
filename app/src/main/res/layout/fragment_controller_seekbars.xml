@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="250dp"
         android:text="@string/controller_Right_Left_text"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -48,7 +48,7 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
-        android:layout_marginTop="205dp"
+        android:layout_marginTop="255dp"
         android:indeterminate="false"
         android:max="360"
         android:progress="180"
@@ -63,41 +63,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="300dp"
         android:text="@string/controller_Back_Front_text"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <SeekBar
         android:id="@+id/B_F_seekBar"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="255dp"
-        android:max="360"
-        android:progress="180"
-        android:scrollbars="horizontal"
-        android:soundEffectsEnabled="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/U_D_button_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="300dp"
-        android:text="@string/controller_Up_Down_text"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <SeekBar
-        android:id="@+id/U_D_seekBar"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
@@ -111,19 +85,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/Rotation_button_text"
+        android:id="@+id/U_D_button_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="350dp"
-        android:text="@string/controller_Rotation_text"
+        android:text="@string/controller_Up_Down_text"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <SeekBar
-        android:id="@+id/Rotation_seekBar"
+        android:id="@+id/U_D_seekBar"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
