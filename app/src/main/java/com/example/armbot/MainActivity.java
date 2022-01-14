@@ -7,6 +7,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -28,6 +31,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.armbot.databinding.ActivityMainBinding;
+
+import java.nio.charset.StandardCharsets;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -65,6 +70,11 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case ArmConnection.STATE_CONNECTED:
                         setState("Connected: " + connectedDevice);
+                        String messageSent = "Hello world";
+                        armConnection.write(messageSent.getBytes());
+
+                        messageSent = "My address is: " + bluetoothAdapter.getAddress();
+                        armConnection.write(messageSent.getBytes());
                         break;
                 }
             }
