@@ -1,3 +1,11 @@
+//
+//  DeviceListActivity
+//  ArmBot Android Application
+//
+//  Created by Anthony FERREYROLLES on 18/01/2022.
+//  Copyright © 2022 ArmBot. All rights reserved.
+//
+
 package com.example.armbot;
 
 import android.annotation.SuppressLint;
@@ -27,6 +35,7 @@ public class DeviceListActivity extends AppCompatActivity {
     private ProgressBar progressScanDevices;
 
     private ArrayAdapter<String> adapterAvailableDevices;
+    private ArrayAdapter<String> adapterPairedDevices;
     private Context context;
     private BluetoothAdapter bluetoothAdapter;
 
@@ -44,7 +53,7 @@ public class DeviceListActivity extends AppCompatActivity {
         ListView listAvailableDevices = findViewById(R.id.list_available_devices);
         progressScanDevices = findViewById(R.id.progress_scan_devices);
 
-        ArrayAdapter<String> adapterPairedDevices = new ArrayAdapter<>(context, R.layout.device_list_item);
+        adapterPairedDevices = new ArrayAdapter<>(context, R.layout.device_list_item);
         adapterAvailableDevices = new ArrayAdapter<>(context, R.layout.device_list_item);
 
         listPairedDevices.setAdapter(adapterPairedDevices);

@@ -1,3 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+      strings
+      ArmBot Android Application
+
+      Created by Anthony FERREYROLLES on 18/01/2022.
+      Copyright © 2022 ArmBot. All rights reserved.
+-->
+
 <resources>
     <string name="app_name">ArmBot</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>

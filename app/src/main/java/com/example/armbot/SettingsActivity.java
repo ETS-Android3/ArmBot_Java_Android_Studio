@@ -1,3 +1,11 @@
+//
+//  SettingsActivity
+//  ArmBot Android Application
+//
+//  Created by Anthony FERREYROLLES on 18/01/2022.
+//  Copyright © 2022 ArmBot. All rights reserved.
+//
+
 package com.example.armbot;
 
 import android.content.Context;
@@ -33,14 +41,12 @@ public class SettingsActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu_home:
-                Intent intent = new Intent(context, MainActivity.class);
-                startActivity(intent);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() == R.id.menu_home) {
+            Intent intent = new Intent(context, MainActivity.class);
+            startActivity(intent);
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

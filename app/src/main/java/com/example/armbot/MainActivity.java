@@ -1,3 +1,11 @@
+//
+//  MainActivity
+//  ArmBot Android Application
+//
+//  Created by Anthony FERREYROLLES on 18/01/2022.
+//  Copyright © 2022 ArmBot. All rights reserved.
+//
+
 package com.example.armbot;
 
 import android.Manifest;
@@ -137,8 +145,8 @@ public class MainActivity extends AppCompatActivity {
                 enableBluetooth();
                 return true;
             case R.id.menu_home:
-                Intent intent2 = new Intent(context, MainActivity.class);
-                startActivityForResult(intent2,SELECT_DEVICE);
+                Intent intent = new Intent(context, MainActivity.class);
+                startActivityForResult(intent,SELECT_DEVICE);
                 return true;
         }
         return super.onOptionsItemSelected(item);

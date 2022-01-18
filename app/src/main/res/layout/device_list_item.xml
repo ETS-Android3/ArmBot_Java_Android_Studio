@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+      device_list_item
+      ArmBot Android Application
+
+      Created by Anthony FERREYROLLES on 18/01/2022.
+      Copyright © 2022 ArmBot. All rights reserved.
+-->
+
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/device_info"
     android:layout_width="match_parent"
