@@ -7,17 +7,30 @@
     tools:context=".ui.controller_buttons.ControllerButtonsFragment">
 
     <TextView
-        android:id="@+id/textViewUp6"
+        android:id="@+id/textViewRightRotation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:text="@string/controller_right_rotation_arrow_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.928"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.64" />
+
+    <TextView
+        android:id="@+id/textViewOpen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:text="@string/controller_open_arrow_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.676"
+        app:layout_constraintHorizontal_bias="0.744"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.689" />
+        app:layout_constraintVertical_bias="0.757" />
 
     <TextView
         android:id="@+id/configuration_text"
@@ -43,11 +56,11 @@
         app:layout_constraintVertical_bias="0.9" />
 
     <ImageButton
-        android:id="@+id/imageButtonForwardArrow"
+        android:id="@+id/buttonForwardArrow"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:background="@drawable/arrow"
-        android:backgroundTint="@color/blue"
+        android:backgroundTint="@drawable/change_buttons_colors"
         android:contentDescription="@string/controller_forward_arrow"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -55,15 +68,15 @@
         app:layout_constraintHorizontal_bias="0.89"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintVertical_bias="0.249"
         tools:ignore="ImageContrastCheck" />
 
     <ImageButton
-        android:id="@+id/imageButtonUpArrow"
+        android:id="@+id/buttonUpArrow"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:background="@drawable/arrow"
-        android:backgroundTint="@color/blue"
+        android:backgroundTint="@drawable/change_buttons_colors"
         android:contentDescription="@string/controller_up_arrow"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -71,15 +84,15 @@
         app:layout_constraintHorizontal_bias="0.332"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintVertical_bias="0.25"
         tools:ignore="ImageContrastCheck" />
 
     <ImageButton
-        android:id="@+id/imageButtonLeftArrow"
+        android:id="@+id/buttonLeftArrow"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:background="@drawable/arrow"
-        android:backgroundTint="@color/blue"
+        android:backgroundTint="@drawable/change_buttons_colors"
         android:contentDescription="@string/controller_left_arrow"
         android:rotation="-90"
         android:scaleType="fitXY"
@@ -88,16 +101,33 @@
         app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.397"
+        app:layout_constraintVertical_bias="0.346"
         tools:ignore="ImageContrastCheck" />
 
     <ImageButton
-        android:id="@+id/imageButtonLeftArrow2"
+        android:id="@+id/buttonLeftRotationArrow"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:layout_marginEnd="100dp"
-        android:background="@drawable/arrow"
-        android:backgroundTint="@color/blue"
+        android:background="@drawable/rotation"
+        android:backgroundTint="@drawable/change_buttons_colors"
+        android:contentDescription="@string/controller_left_rotation_arrow_text"
+        android:rotationY="180"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.636"
+        tools:ignore="ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+    <ImageButton
+        android:id="@+id/buttonCloseArrow"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/in"
+        android:backgroundTint="@drawable/change_buttons_colors"
         android:contentDescription="@string/controller_close_arrow"
         android:rotation="-90"
         android:scaleType="fitXY"
@@ -105,15 +135,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.699"
+        app:layout_constraintVertical_bias="0.77"
         tools:ignore="ImageContrastCheck" />
 
     <ImageButton
-        android:id="@+id/imageButtonDownArrow"
+        android:id="@+id/buttonDownArrow"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:background="@drawable/arrow"
-        android:backgroundTint="@color/blue"
+        android:backgroundTint="@drawable/change_buttons_colors"
         android:contentDescription="@string/controller_down_arrow"
         android:rotation="180"
         android:scaleType="fitXY"
@@ -122,15 +152,15 @@
         app:layout_constraintHorizontal_bias="0.332"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.492"
+        app:layout_constraintVertical_bias="0.442"
         tools:ignore="ImageContrastCheck" />
 
     <ImageButton
-        android:id="@+id/imageButtonBackwardArrow"
+        android:id="@+id/buttonBackwardArrow"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:background="@drawable/arrow"
-        android:backgroundTint="@color/blue"
+        android:backgroundTint="@drawable/change_buttons_colors"
         android:contentDescription="@string/controller_backward_arrow"
         android:rotation="180"
         android:scaleType="fitXY"
@@ -139,53 +169,67 @@
         app:layout_constraintHorizontal_bias="0.89"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.492"
+        app:layout_constraintVertical_bias="0.442"
         tools:ignore="ImageContrastCheck" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textViewBackward"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="90dp"
         android:text="@string/controller_backward_arrow_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintHorizontal_bias="0.89"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.49" />
+        app:layout_constraintVertical_bias="0.432" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewForward"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="110dp"
         android:text="@string/controller_forward_arrow_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintHorizontal_bias="0.87"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintVertical_bias="0.244" />
 
     <TextView
-        android:id="@+id/textViewUp5"
+        android:id="@+id/textViewLeftRotation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="200dp"
+        android:text="@string/controller_left_rotation_arrow_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.64" />
+
+    <TextView
+        android:id="@+id/textViewClose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="200dp"
         android:text="@string/controller_close_arrow_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.352"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.689" />
+        app:layout_constraintVertical_bias="0.757" />
 
     <ImageButton
-        android:id="@+id/imageButtonRightArrow"
+        android:id="@+id/buttonRightArrow"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:background="@drawable/arrow"
-        android:backgroundTint="@color/blue"
+        android:backgroundTint="@drawable/change_buttons_colors"
         android:contentDescription="@string/controller_right_arrow"
         android:rotation="90"
         android:scaleType="fitXY"
@@ -194,16 +238,33 @@
         app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.397"
+        app:layout_constraintVertical_bias="0.345"
         tools:ignore="ImageContrastCheck" />
 
     <ImageButton
-        android:id="@+id/imageButtonRightArrow2"
+        android:id="@+id/buttonRightRotationArrow"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:layout_marginStart="100dp"
-        android:background="@drawable/arrow"
-        android:backgroundTint="@color/blue"
+        android:background="@drawable/rotation"
+        android:backgroundTint="@drawable/change_buttons_colors"
+        android:contentDescription="@string/controller_right_rotation_arrow_text"
+        android:rotation="0"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.636"
+        tools:ignore="ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+    <ImageButton
+        android:id="@+id/buttonOpenArrow"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="100dp"
+        android:background="@drawable/out"
+        android:backgroundTint="@drawable/change_buttons_colors"
         android:contentDescription="@string/controller_open_arrow"
         android:rotation="90"
         android:scaleType="fitXY"
@@ -211,7 +272,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.699"
+        app:layout_constraintVertical_bias="0.77"
         tools:ignore="ImageContrastCheck" />
 
     <Button

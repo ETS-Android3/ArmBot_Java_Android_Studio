@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.armbot">
     <!-- Request legacy Bluetooth permissions on older devices. -->
     <uses-permission
@@ -35,13 +36,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ArmBot">
+        android:theme="@style/Theme.ArmBot"
+        tools:ignore="AllowBackup">
         <activity
             android:name=".SettingsActivity"
             android:exported="false" />
         <activity
             android:name=".ArmConnection"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".DeviceListActivity"
             android:exported="false" />

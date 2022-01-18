@@ -47,6 +47,8 @@
     <string name="controller_backward_arrow_text">Backward</string>
     <string name="controller_open_arrow_text">Open</string>
     <string name="controller_close_arrow_text">Close</string>
+    <string name="controller_right_rotation_arrow_text">Right Rotation</string>
+    <string name="controller_left_rotation_arrow_text">Left Rotation</string>
 
     <string name="controller_seekbar_buttons_text">Seekbars</string>
     <string name="controller_buttons_text">Buttons</string>

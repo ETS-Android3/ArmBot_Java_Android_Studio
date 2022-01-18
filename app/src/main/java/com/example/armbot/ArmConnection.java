@@ -1,19 +1,15 @@
 package com.example.armbot;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothServerSocket;
 import android.bluetooth.BluetoothSocket;
-import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-import android.widget.Toast;
 
-import com.example.armbot.MainActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,15 +17,13 @@ import java.io.OutputStream;
 import java.util.UUID;
 
 public class ArmConnection extends AppCompatActivity {
-    private Context context;
-    private Handler handler;
-    private BluetoothAdapter bluetoothAdapter;
+    private final Handler handler;
+    private final BluetoothAdapter bluetoothAdapter;
     private ConnectThread connectThread;
     private AcceptThread acceptThread;
     private ConnectedThread connectedThread;
 
     private final UUID APP_UUID = UUID.fromString("38d46a42-bda1-4a6e-9cd4-cfc4b8056203");
-    private final String APP_NAME = "ArmBot";
 
     public static final int STATE_NONE = 0;
     public static final int STATE_LISTEN = 1;
@@ -38,20 +32,11 @@ public class ArmConnection extends AppCompatActivity {
 
     private int state;
 
-    public ArmConnection() {
-
-    }
-
-    public ArmConnection(Context context, Handler handler) {
-        this.context = context;
+    public ArmConnection(Handler handler) {
         this.handler = handler;
 
         state = STATE_NONE;
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-    }
-
-    public int getState() {
-        return state;
     }
 
     public synchronized void setState(int state) {
@@ -127,11 +112,12 @@ public class ArmConnection extends AppCompatActivity {
     }
 
     private class AcceptThread extends Thread {
-        private BluetoothServerSocket serverSocket;
+        private final BluetoothServerSocket serverSocket;
 
         public AcceptThread() {
             BluetoothServerSocket tmp = null;
             try {
+                String APP_NAME = "ArmBot";
                 tmp = bluetoothAdapter.listenUsingRfcommWithServiceRecord(APP_NAME, APP_UUID);
             } catch (IOException e) {
                 Log.e("Accept->Constructor", e.toString());
@@ -242,6 +228,7 @@ public class ArmConnection extends AppCompatActivity {
                 tmpIn = socket.getInputStream();
                 tmpOut = socket.getOutputStream();
             } catch (IOException e) {
+                e.printStackTrace();
             }
 
             inputStream = tmpIn;
@@ -266,7 +253,7 @@ public class ArmConnection extends AppCompatActivity {
                 outputStream.write(buffer);
                 handler.obtainMessage(MainActivity.MESSAGE_WRITE, -1, -1, buffer).sendToTarget();
             } catch (IOException e) {
-
+                e.printStackTrace();
             }
         }
 
@@ -274,7 +261,7 @@ public class ArmConnection extends AppCompatActivity {
             try {
                 socket.close();
             } catch (IOException e) {
-
+                e.printStackTrace();
             }
         }
     }

@@ -1,15 +1,12 @@
 package com.example.armbot;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothHeadset;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.wifi.WifiInfo;
-import android.net.wifi.WifiManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -21,6 +18,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.navigation.NavController;
@@ -32,13 +30,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.armbot.databinding.ActivityMainBinding;
 
-import java.nio.charset.StandardCharsets;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private Context context;
-    private BluetoothAdapter bluetoothAdapter;
+    private static BluetoothAdapter bluetoothAdapter;
     private ArmConnection armConnection;
 
     private final int LOCATION_PERMISSION_REQUEST = 101;
@@ -53,15 +51,15 @@ public class MainActivity extends AppCompatActivity {
     public static final String DEVICE_NAME = "deviceName";
     public static final String TOAST = "toast";
     private String connectedDevice;
+    public static boolean bluetoothEnabled = false;
 
     private final Handler handler = new Handler(new Handler.Callback() {
+        @SuppressLint("HardwareIds")
         @Override
         public boolean handleMessage(Message message) {
             if (message.what == MESSAGE_STATE_CHANGED) {
                 switch (message.arg1) {
                     case ArmConnection.STATE_NONE:
-                        setState("Not Connected");
-                        break;
                     case ArmConnection.STATE_LISTEN:
                         setState("Not Connected");
                         break;
@@ -83,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
     });
 
     public void setState(CharSequence subTitle) {
-        getSupportActionBar().setSubtitle(subTitle);
+        Objects.requireNonNull(getSupportActionBar()).setSubtitle(subTitle);
     }
 
     @Override
@@ -93,7 +91,8 @@ public class MainActivity extends AppCompatActivity {
         ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        setSupportActionBar(binding.appBarMain.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
@@ -109,24 +108,8 @@ public class MainActivity extends AppCompatActivity {
 
         context = this;
 
-        armConnection = new ArmConnection(context, handler);
+        armConnection = new ArmConnection(handler);
         initBluetooth();
-
-        if (!bluetoothAdapter.isEnabled()){
-            getSupportActionBar().setSubtitle("Bluetooth Disabled");
-        }
-        if (getSupportActionBar().getSubtitle() == "Bluetooth Disabled"){
-            if (bluetoothAdapter.isEnabled()) {
-                getSupportActionBar().setSubtitle("");
-            }
-        }
-        if(bluetoothAdapter.getProfileConnectionState(BluetoothHeadset.HEADSET) != BluetoothAdapter.STATE_CONNECTED){
-            getSupportActionBar().setSubtitle("Not Connected");
-        } else {
-            if(getSupportActionBar().getSubtitle() == ""){
-                getSupportActionBar().setSubtitle("Connected: " + connectedDevice);
-            }
-        }
     }
 
     @Override
@@ -143,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
@@ -152,10 +136,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menu_enable_bluetooth:
                 enableBluetooth();
                 return true;
-            /*case R.id.menu_action_settings:
-                Intent intent1 = new Intent(context, SettingsActivity.class);
-                startActivity(intent1);
-                return true;*/
             case R.id.menu_home:
                 Intent intent2 = new Intent(context, MainActivity.class);
                 startActivityForResult(intent2,SELECT_DEVICE);
@@ -168,6 +148,16 @@ public class MainActivity extends AppCompatActivity {
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if (bluetoothAdapter == null){
             Toast.makeText(context, "No Bluetooth found", Toast.LENGTH_SHORT).show();
+        } else {
+            if (!bluetoothAdapter.isEnabled()){
+                Objects.requireNonNull(getSupportActionBar()).setSubtitle("Bluetooth Disabled");
+            } else {
+                if(bluetoothAdapter.getProfileConnectionState(BluetoothHeadset.HEADSET) != BluetoothAdapter.STATE_CONNECTED){
+                    Objects.requireNonNull(getSupportActionBar()).setSubtitle("Not Connected");
+                } else {
+                    Objects.requireNonNull(getSupportActionBar()).setSubtitle("Connected: " + connectedDevice);
+                }
+            }
         }
     }
 
@@ -178,8 +168,13 @@ public class MainActivity extends AppCompatActivity {
         else {
             bluetoothAdapter.enable();
             Toast.makeText(context, "Bluetooth enabled", Toast.LENGTH_SHORT).show();
-            if (getSupportActionBar().getSubtitle() == "Bluetooth Disabled"){
-                    getSupportActionBar().setSubtitle("");
+            if (Objects.requireNonNull(getSupportActionBar()).getSubtitle() == "Bluetooth Disabled"){
+                    getSupportActionBar().setSubtitle("Not Connected");
+            }
+            try {
+                findViewById(R.id.enter_button).setEnabled(true);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
     }
@@ -199,18 +194,8 @@ public class MainActivity extends AppCompatActivity {
                 new AlertDialog.Builder(context)
                         .setCancelable(false)
                         .setMessage("Location permission is required.\nPlease grant.")
-                        .setPositiveButton("Grant", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                checkPermission();
-                            }
-                        })
-                        .setNegativeButton("Deny", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                MainActivity.this.finish();
-                            }
-                        })
+                        .setPositiveButton("Grant", (dialog, which) -> checkPermission())
+                        .setNegativeButton("Deny", (dialog, which) -> MainActivity.this.finish())
                         .show();
             }
         }
@@ -233,5 +218,9 @@ public class MainActivity extends AppCompatActivity {
         if (armConnection != null) {
             armConnection.stop();
         }
+    }
+
+    public static BluetoothAdapter getBluetoothAdapter() {
+        return bluetoothAdapter;
     }
 }
