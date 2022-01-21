@@ -21,9 +21,12 @@ import com.example.armbot.R;
 import com.example.armbot.databinding.FragmentControllerSeekbarsBinding;
 
 public class ControllerSeekbarsFragment extends Fragment {
-
+    //Variables declaration
     private FragmentControllerSeekbarsBinding binding;
 
+    /*
+    Creates the view
+     */
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -35,10 +38,16 @@ public class ControllerSeekbarsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        /*
+        On click listener to move to the Button controller view.
+         */
         view.findViewById(R.id.buttonButtonsController).setOnClickListener(view1 -> NavHostFragment.findNavController(ControllerSeekbarsFragment.this)
                 .navigate(R.id.action_nav_seekbar_controller_to_nav_button_controller));
     }
 
+    /*
+    Destroys the view
+     */
     @Override
     public void onDestroyView() {
         super.onDestroyView();

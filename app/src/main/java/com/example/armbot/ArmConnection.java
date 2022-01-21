@@ -25,13 +25,15 @@ import java.io.OutputStream;
 import java.util.UUID;
 
 public class ArmConnection extends AppCompatActivity {
+    //Variables declaration
     private final Handler handler;
     private final BluetoothAdapter bluetoothAdapter;
     private ConnectThread connectThread;
     private AcceptThread acceptThread;
     private ConnectedThread connectedThread;
 
-    private final UUID APP_UUID = UUID.fromString("38d46a42-bda1-4a6e-9cd4-cfc4b8056203");
+    //UUID: 00001101-0000-1000-8000-00805F9B34FB - Default bluetooth UUID
+    private final UUID APP_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
     public static final int STATE_NONE = 0;
     public static final int STATE_LISTEN = 1;
@@ -40,18 +42,31 @@ public class ArmConnection extends AppCompatActivity {
 
     private int state;
 
+    /*
+    Constructor.
+     */
     public ArmConnection(Handler handler) {
         this.handler = handler;
 
         state = STATE_NONE;
+
+        /*
+        Gets the bluetooth adapter
+         */
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
     }
 
     public synchronized void setState(int state) {
         this.state = state;
+        /*
+        Calls the MainActivity handler and sets a new state
+         */
         handler.obtainMessage(MainActivity.MESSAGE_STATE_CHANGED, state, -1).sendToTarget();
     }
 
+    /*
+    Starts the listening mode when the ArmConnection activity is called
+     */
     private synchronized void start() {
         if (connectThread != null) {
             connectThread.cancel();
@@ -71,11 +86,15 @@ public class ArmConnection extends AppCompatActivity {
         setState(STATE_LISTEN);
     }
 
+    /*
+    Stops the listening mode
+     */
     public synchronized void stop() {
         if (connectThread != null) {
             connectThread.cancel();
             connectThread = null;
         }
+
         if (acceptThread != null) {
             acceptThread.cancel();
             acceptThread = null;
@@ -89,6 +108,10 @@ public class ArmConnection extends AppCompatActivity {
         setState(STATE_NONE);
     }
 
+    /*
+    Starts the connection to the raspberry. Called in MainActivity.
+    Calls the start method of ConnectedThread.
+     */
     public void connect(BluetoothDevice device) {
         if (state == STATE_CONNECTING) {
             connectThread.cancel();
@@ -106,6 +129,10 @@ public class ArmConnection extends AppCompatActivity {
         setState(STATE_CONNECTING);
     }
 
+    /*
+    Writes commands to the raspberry.
+    Used in MainActivity and ControllerButtonsFragment.
+     */
     public void write(byte[] buffer) {
         ConnectedThread connThread;
         synchronized (this) {
@@ -119,12 +146,19 @@ public class ArmConnection extends AppCompatActivity {
         connThread.write(buffer);
     }
 
+    /*
+    Accepts threads
+     */
     private class AcceptThread extends Thread {
         private final BluetoothServerSocket serverSocket;
 
         public AcceptThread() {
             BluetoothServerSocket tmp = null;
             try {
+                /*
+                Starts a bluetooth listening mode using the UUID and the app name.
+                Returns the socket
+                 */
                 String APP_NAME = "ArmBot";
                 tmp = bluetoothAdapter.listenUsingRfcommWithServiceRecord(APP_NAME, APP_UUID);
             } catch (IOException e) {
@@ -137,6 +171,9 @@ public class ArmConnection extends AppCompatActivity {
         public void run() {
             BluetoothSocket socket = null;
             try {
+                /*
+                When a connection is accepted, return the socket.
+                 */
                 socket = serverSocket.accept();
             } catch (IOException e) {
                 Log.e("Accept->Run", e.toString());
@@ -147,6 +184,9 @@ public class ArmConnection extends AppCompatActivity {
                 }
             }
 
+            /*
+            When the socket is returned and isn't null, tries to connect to the device by calling the connect method.
+             */
             if (socket != null) {
                 switch (state) {
                     case STATE_LISTEN:
@@ -183,6 +223,9 @@ public class ArmConnection extends AppCompatActivity {
 
             BluetoothSocket tmp = null;
             try {
+                /*
+                Creates a RF communication socket using the given UUID
+                 */
                 tmp = device.createRfcommSocketToServiceRecord(APP_UUID);
             } catch (IOException e) {
                 Log.e("Connect->Constructor", e.toString());
@@ -193,6 +236,9 @@ public class ArmConnection extends AppCompatActivity {
 
         public void run() {
             try {
+                /*
+                Tries to connect to the raspberry
+                 */
                 socket.connect();
             } catch (IOException e) {
                 Log.e("Connect->Run", e.toString());
@@ -233,6 +279,9 @@ public class ArmConnection extends AppCompatActivity {
             OutputStream tmpOut = null;
 
             try {
+                /*
+                Gets the inputs and outputs once the connection is established
+                 */
                 tmpIn = socket.getInputStream();
                 tmpOut = socket.getOutputStream();
             } catch (IOException e) {
@@ -274,6 +323,9 @@ public class ArmConnection extends AppCompatActivity {
         }
     }
 
+    /*
+    Returns to the MainActivity that the connection was lost
+     */
     private void connectionLost() {
         Message message = handler.obtainMessage(MainActivity.MESSAGE_TOAST);
         Bundle bundle = new Bundle();
@@ -284,6 +336,9 @@ public class ArmConnection extends AppCompatActivity {
         ArmConnection.this.start();
     }
 
+    /*
+    Returns to the MainActivity that the connection failed
+     */
     private synchronized void connectionFailed() {
         Message message = handler.obtainMessage(MainActivity.MESSAGE_TOAST);
         Bundle bundle = new Bundle();
@@ -294,6 +349,9 @@ public class ArmConnection extends AppCompatActivity {
         ArmConnection.this.start();
     }
 
+    /*
+    Calls the ConnectedThread class to try to connect to the raspberry
+     */
     private synchronized void connected(BluetoothSocket socket, BluetoothDevice device) {
         if (connectThread != null) {
             connectThread.cancel();
@@ -305,6 +363,9 @@ public class ArmConnection extends AppCompatActivity {
             connectedThread = null;
         }
 
+        /*
+        Starts the connection
+         */
         connectedThread = new ConnectedThread(socket);
         connectedThread.start();
 
