@@ -54,13 +54,13 @@ public class HomeFragment extends Fragment {
         /*
         Disables the "Enter" button when there is no bluetooth enabled
          */
-        if (!bluetoothAdapter.isEnabled()){
+        /*if (!bluetoothAdapter.isEnabled()){
             view.findViewById(R.id.enter_button).setEnabled(false);
             MainActivity.bluetoothEnabled = false;
         } else {
             view.findViewById(R.id.enter_button).setEnabled(true);
             MainActivity.bluetoothEnabled = true;
-        }
+        }*/
     }
 
     /*
