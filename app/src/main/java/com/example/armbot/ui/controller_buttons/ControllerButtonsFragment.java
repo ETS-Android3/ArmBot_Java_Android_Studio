@@ -29,7 +29,6 @@ import com.example.armbot.databinding.FragmentControllerButtonsBinding;
 
 public class ControllerButtonsFragment extends Fragment {
     //Variables declaration
-    private ArmConnection armConnection;
     private FragmentControllerButtonsBinding binding;
 
     /*
@@ -47,6 +46,7 @@ public class ControllerButtonsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        //Variables declaration
         ImageButton buttonUp            = view.findViewById(R.id.buttonUpArrow);
         ImageButton buttonDown          = view.findViewById(R.id.buttonDownArrow);
         ImageButton buttonRight         = view.findViewById(R.id.buttonRightArrow);
@@ -57,6 +57,8 @@ public class ControllerButtonsFragment extends Fragment {
         ImageButton buttonClose         = view.findViewById(R.id.buttonCloseArrow);
         ImageButton buttonRightRotation = view.findViewById(R.id.buttonRightRotationArrow);
         ImageButton buttonLeftRotation  = view.findViewById(R.id.buttonLeftRotationArrow);
+
+        Button buttonReset              = view.findViewById(R.id.buttonReset);
 
         /*
         On click listener to move to the Seekbar controller view.
@@ -317,6 +319,11 @@ public class ControllerButtonsFragment extends Fragment {
             }
             return false;
         });
+
+        /*
+        Sends a "0" to the Raspberry
+         */
+        buttonReset.setOnClickListener(v -> MainActivity.SendAction("0"));
     }
 
 
