@@ -10,6 +10,8 @@ Approximatly 4.78 people out of 100,000 poccess the DMD in the world. To help th
 
 This project was possible thanks to [Niryo](https://niryo.com/fr/)'s 3D models of the arm, the FabLab of [ECE Paris](https://www.ece.fr/) school and [HandiTech](https://handitech-france.fr/).
 
+**The usage of the arm is under the responsability of the user.**
+
 ## Java Application Goal
 
 This is the code for the android app to control the robotic arm.
