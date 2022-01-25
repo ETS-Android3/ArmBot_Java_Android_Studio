@@ -132,7 +132,7 @@ public class ControllerButtonsFragment extends Fragment {
                 mHandler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        MainActivity.SendAction("3");
+                        MainActivity.SendAction("5");
 
                         /*
                         ControllerButtonsViewModel.setDegreesMotor2(ControllerButtonsViewModel.getDegreesMotor2() + 1);
@@ -157,7 +157,7 @@ public class ControllerButtonsFragment extends Fragment {
                 mHandler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        MainActivity.SendAction("4");
+                        MainActivity.SendAction("6");
 
                         /*
                         ControllerButtonsViewModel.setDegreesMotor2(ControllerButtonsViewModel.getDegreesMotor2() - 1);
@@ -182,7 +182,7 @@ public class ControllerButtonsFragment extends Fragment {
                 mHandler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        MainActivity.SendAction("5");
+                        MainActivity.SendAction("3");
 
                         /*
                         ControllerButtonsViewModel.setDegreesMotor1(ControllerButtonsViewModel.getDegreesMotor1() - 1);
@@ -206,7 +206,7 @@ public class ControllerButtonsFragment extends Fragment {
                 mHandler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        MainActivity.SendAction("6");
+                        MainActivity.SendAction("4");
 
                         /*
                         ControllerButtonsViewModel.setDegreesMotor1(ControllerButtonsViewModel.getDegreesMotor1() + 1);
@@ -230,7 +230,7 @@ public class ControllerButtonsFragment extends Fragment {
                 mHandler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        MainActivity.SendAction("7");
+                        MainActivity.SendAction("10");
 
                         /*
                         ControllerButtonsViewModel.setDegreesMotor6(ControllerButtonsViewModel.getDegreesMotor6() + 1);
@@ -254,7 +254,7 @@ public class ControllerButtonsFragment extends Fragment {
                 mHandler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        MainActivity.SendAction("8");
+                        MainActivity.SendAction("9");
 
                         /*
                         ControllerButtonsViewModel.setDegreesMotor6(ControllerButtonsViewModel.getDegreesMotor6() - 1);
@@ -278,7 +278,7 @@ public class ControllerButtonsFragment extends Fragment {
                 mHandler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        MainActivity.SendAction("9");
+                        MainActivity.SendAction("7");
 
                         /*
                         ControllerButtonsViewModel.setDegreesMotor5(ControllerButtonsViewModel.getDegreesMotor5() - 1);
@@ -302,7 +302,7 @@ public class ControllerButtonsFragment extends Fragment {
                 mHandler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        MainActivity.SendAction("10");
+                        MainActivity.SendAction("8");
 
                         /*
                         ControllerButtonsViewModel.setDegreesMotor5(ControllerButtonsViewModel.getDegreesMotor5() + 1);
