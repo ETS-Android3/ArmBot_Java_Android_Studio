@@ -23,6 +23,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private Context context;
     private static BluetoothAdapter bluetoothAdapter;
     private static ArmConnection armConnection;
+    private static ActionBar actionBar;
 
     private final int LOCATION_PERMISSION_REQUEST = 101;
     private final int SELECT_DEVICE = 102;
@@ -58,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String DEVICE_NAME = "deviceName";
     public static final String TOAST = "toast";
     private String connectedDevice;
-    public static boolean bluetoothEnabled = false;
+    //public static boolean bluetoothEnabled = false;
 
     /*
         Used to handle the messages sent by the ArmConnection.java.
@@ -130,6 +132,10 @@ public class MainActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setSubtitle(subTitle);
     }
 
+    public static String getState(){
+        return actionBar.getSubtitle().toString();
+    }
+
     public static void SendAction(String action){
         /*
         Sends the chosen action to the Raspberry. This function is used in ControllerButtonsFragment.java.
@@ -170,6 +176,8 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
         context = this;
+
+        actionBar = getSupportActionBar();
 
         /*
         While the Bluetooth connection isn't established, we can't enter the app

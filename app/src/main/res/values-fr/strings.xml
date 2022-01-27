@@ -45,4 +45,10 @@
     <string name="controller_left_rotation_arrow_text">Rotation gauche</string>
     <string name="controller_buttons_text">Boutons</string>
     <string name="controller_seekbar_buttons_text">Barres</string>
+    <string name="settings_arm_speed_text">Vitesse du bras:</string>
+    <string name="settings_arm_speed_0_5">x 0.5</string>
+    <string name="settings_arm_speed_0_75">x 0.75</string>
+    <string name="settings_arm_speed_1">x 1</string>
+    <string name="settings_arm_speed_1_25">x 1.25</string>
+    <string name="settings_arm_speed_1_5">x 1.5</string>
 </resources>

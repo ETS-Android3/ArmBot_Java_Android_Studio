@@ -39,11 +39,6 @@
         android:theme="@style/Theme.ArmBot"
         tools:ignore="AllowBackup">
         <activity
-            android:name=".SettingsActivity"
-            android:screenOrientation="portrait"
-            android:exported="false"
-            tools:ignore="LockedOrientationActivity" />
-        <activity
             android:name=".ArmConnection"
             android:screenOrientation="portrait"
             android:exported="false"
