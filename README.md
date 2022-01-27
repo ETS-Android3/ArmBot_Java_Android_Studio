@@ -70,7 +70,7 @@ In order to create a connection between the app and the Raspberry, you need to h
 
 * Click on the <img width="25" height="25" src="https://user-images.githubusercontent.com/71266159/151390791-1c620555-a89d-48a8-8973-ca2fe329f6d1.PNG"> button to search Bluetooth devices.
 
-* In the Bluetooth page, select the Raspberryn which should be already paired and wait until the "Connected : 'Raspberry name'" message appears under the "Home" title.
+* In the Bluetooth page, select the Raspberry Pi which should be already paired and wait until the "Connected : 'Raspberry name'" message appears under the "Home" title.
 
 * Click on the "Enter" button to go to the controllers.
 
