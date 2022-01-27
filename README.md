@@ -1,5 +1,12 @@
 # Armbot-Java-Android Studio
 
+## Table of contents
+* [Project Goal](#project-goal)
+* [Java Application Goal](#java-application-goal)
+* [Prerequisite](#prerequisite)
+* [Application Download](#application-download)
+* [How to use the app](#how-to-use-the-app)
+
 ## Project Goal
 
 '*Duchenne muscular dystrophy (DMD) is a genetic disorder characterized by progressive muscle degeneration and weakness due to the alterations of a protein called dystrophin that helps keep muscle cells intact*'. 
