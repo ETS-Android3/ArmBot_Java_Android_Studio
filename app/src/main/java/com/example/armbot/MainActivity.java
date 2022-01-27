@@ -92,8 +92,9 @@ public class MainActivity extends AppCompatActivity {
                              */
                             String messageSent = "Connection succeeded";
                             armConnection.write(messageSent.getBytes());
-
                             break;
+                        default:
+                            throw new IllegalStateException("Unexpected value: " + message.arg1);
                     }
                     break;
                 case MESSAGE_DEVICE_NAME:
@@ -103,16 +104,16 @@ public class MainActivity extends AppCompatActivity {
                 /*case MESSAGE_WRITE:
                     byte[] buffer1 = (byte[]) message.obj;
                     String outputBuffer = new String(buffer1);
-                    adapterMainChat.add("Me: " + outputBuffer);
                     break;
                 case MESSAGE_READ:
                     byte[] buffer = (byte[]) message.obj;
                     String inputBuffer = new String(buffer, 0, message.arg1);
-                    adapterMainChat.add(connectedDevice + ": " + inputBuffer);
                     break;*/
                 case MESSAGE_TOAST:
                     Toast.makeText(context, message.getData().getString(TOAST), Toast.LENGTH_SHORT).show();
                     break;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + message.what);
             }
             return false;
         }
@@ -133,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public static String getState(){
-        return actionBar.getSubtitle().toString();
+        return Objects.requireNonNull(actionBar.getSubtitle()).toString();
     }
 
     public static void SendAction(String action){
