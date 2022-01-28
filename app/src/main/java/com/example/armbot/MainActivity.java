@@ -62,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
     private String connectedDevice;
     //public static boolean bluetoothEnabled = false;
 
+    private static String armSpeed = "x 1" ;
+
     /*
         Used to handle the messages sent by the ArmConnection.java.
      */
@@ -92,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
                              */
                             String messageSent = "Connection succeeded";
                             armConnection.write(messageSent.getBytes());
+                            armConnection.write(armSpeed.getBytes());
                             break;
                         default:
                             throw new IllegalStateException("Unexpected value: " + message.arg1);
@@ -341,6 +344,14 @@ public class MainActivity extends AppCompatActivity {
             armConnection.connect(bluetoothAdapter.getRemoteDevice(address));
         }
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public static String getArmSpeed() {
+        return armSpeed;
+    }
+
+    public static void setArmSpeed(String armSpeed) {
+        MainActivity.armSpeed = armSpeed;
     }
 
     @Override
