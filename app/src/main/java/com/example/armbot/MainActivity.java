@@ -62,8 +62,6 @@ public class MainActivity extends AppCompatActivity {
     private String connectedDevice;
     //public static boolean bluetoothEnabled = false;
 
-    private static String armSpeed = "x 1" ;
-
     /*
         Used to handle the messages sent by the ArmConnection.java.
      */
@@ -92,9 +90,9 @@ public class MainActivity extends AppCompatActivity {
                             /*
                             Once connected to the Raspberry, sends a success message to it.
                              */
-                            String messageSent = "Connection succeeded";
-                            armConnection.write(messageSent.getBytes());
-                            armConnection.write(armSpeed.getBytes());
+                            /*String messageSent = "Connection succeeded";
+                            armConnection.write(messageSent.getBytes());*/
+
                             break;
                         default:
                             throw new IllegalStateException("Unexpected value: " + message.arg1);
@@ -115,8 +113,6 @@ public class MainActivity extends AppCompatActivity {
                 case MESSAGE_TOAST:
                     Toast.makeText(context, message.getData().getString(TOAST), Toast.LENGTH_SHORT).show();
                     break;
-                default:
-                    throw new IllegalStateException("Unexpected value: " + message.what);
             }
             return false;
         }
@@ -180,8 +176,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
         context = this;
-
-        actionBar = getSupportActionBar();
 
         /*
         While the Bluetooth connection isn't established, we can't enter the app
@@ -344,14 +338,6 @@ public class MainActivity extends AppCompatActivity {
             armConnection.connect(bluetoothAdapter.getRemoteDevice(address));
         }
         super.onActivityResult(requestCode, resultCode, data);
-    }
-
-    public static String getArmSpeed() {
-        return armSpeed;
-    }
-
-    public static void setArmSpeed(String armSpeed) {
-        MainActivity.armSpeed = armSpeed;
     }
 
     @Override

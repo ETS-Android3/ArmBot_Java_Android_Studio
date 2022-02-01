@@ -71,33 +71,33 @@ public class SettingsFragment extends Fragment {
                         Changes the speed and sends the nex speed to the Raspberry
                          */
                         buttonArmSpeed.setText("x 0.75");
-                        MainActivity.setArmSpeed("x 0.75");
-                        MainActivity.SendAction("v_0.75");
+                        /*MainActivity.setArmSpeed("x 0.75");
+                        MainActivity.SendAction("v_0.75");*/
                         break;
                     case "x 0.75":
                         buttonArmSpeed.setText("x 1");
-                        MainActivity.setArmSpeed("x 1");
-                        MainActivity.SendAction("v_1");
+                        /*MainActivity.setArmSpeed("x 1");
+                        MainActivity.SendAction("v_1");*/
                         break;
                     case "x 1":
                         buttonArmSpeed.setText("x 1.25");
-                        MainActivity.setArmSpeed("x 1.25");
-                        MainActivity.SendAction("v_1.25");
+                        /*MainActivity.setArmSpeed("x 1.25");
+                        MainActivity.SendAction("v_1.25");*/
                         break;
                     case "x 1.25":
                         buttonArmSpeed.setText("x 1.5");
-                        MainActivity.setArmSpeed("x 1.5");
-                        MainActivity.SendAction("v_1.5");
+                        /*MainActivity.setArmSpeed("x 1.5");
+                        MainActivity.SendAction("v_1.5");*/
                         break;
                     case "x 1.5":
                         buttonArmSpeed.setText("x 0.5");
-                        MainActivity.setArmSpeed("x 0.5");
-                        MainActivity.SendAction("v_0.5");
+                        /*MainActivity.setArmSpeed("x 0.5");
+                        MainActivity.SendAction("v_0.5");*/
                         break;
                     default:
                         buttonArmSpeed.setText("x 1");
-                        MainActivity.setArmSpeed("x 1");
-                        MainActivity.SendAction("v_1");
+                        /*MainActivity.setArmSpeed("x 1");
+                        MainActivity.SendAction("v_1");*/
                         break;
                 }
             } else {
