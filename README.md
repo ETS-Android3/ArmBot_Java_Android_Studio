@@ -47,6 +47,7 @@ In order to create a connection between the app and the Raspberry, you need to h
 >
 > So navigate to your phone settings menu then to the security settings. Enable the Install from Unknown Sources option.
 
+> ℹ **Note** : To create an APK in Android Studio, go to "Build" and select "Build Bundle(s) / APK(s)" and click on "Build APK(s)".
 
 ### How to use the app
 
