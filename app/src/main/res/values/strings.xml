@@ -61,4 +61,11 @@
 
     <string name="controller_seekbar_buttons_text">Seekbars</string>
     <string name="controller_buttons_text">Buttons</string>
+
+    <string name="settings_arm_speed_text">Arm Speed:</string>
+    <string name="settings_arm_speed_0_5">x 0.5</string>
+    <string name="settings_arm_speed_0_75">x 0.75</string>
+    <string name="settings_arm_speed_1">x 1</string>
+    <string name="settings_arm_speed_1_25">x 0.25</string>
+    <string name="settings_arm_speed_1_5">x 1.5</string>
 </resources>

@@ -20,9 +20,7 @@ import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.armbot.ArmConnection;
 import com.example.armbot.MainActivity;
 import com.example.armbot.R;
 import com.example.armbot.databinding.FragmentControllerButtonsBinding;
