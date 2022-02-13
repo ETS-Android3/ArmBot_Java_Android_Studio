@@ -62,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
     private String connectedDevice;
     //public static boolean bluetoothEnabled = false;
 
+    private static String ArmSpeed = "x 1";
+
     /*
         Used to handle the messages sent by the ArmConnection.java.
      */
@@ -338,6 +340,14 @@ public class MainActivity extends AppCompatActivity {
             armConnection.connect(bluetoothAdapter.getRemoteDevice(address));
         }
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public static String getArmSpeed() {
+        return ArmSpeed;
+    }
+
+    public static void setArmSpeed(String armSpeed) {
+        ArmSpeed = armSpeed;
     }
 
     @Override
