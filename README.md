@@ -39,7 +39,7 @@ In order to create a connection between the app and the Raspberry, you need to h
 
 ### Application Download
 
-* On your Android, go to this [link](https://drive.google.com/drive/folders/1EEAC_9meE7mFTIsfq7AG75mwahTAs3Wy?usp=sharing) and click on "ArmBot_app.apk" to download it.
+* On your Android, go to this [link](https://github.com/ArmBot-ECE/ArmBot_Java_Android_Studio/tree/master/DOWNLOAD_APP_APK) and click on "ArmBot_app_XXXXXX.apk" to download it.
 * Explore the files of your Smartphone to find the APK application file you previously downloaded.
 * Click on the file and press “Install” to launch the installation.
 
