@@ -49,7 +49,7 @@ public class HomeFragment extends Fragment {
         /*
         Gets the bluetooth adapter of the MainActivity
          */
-        BluetoothAdapter bluetoothAdapter = MainActivity.getBluetoothAdapter();
+        //BluetoothAdapter bluetoothAdapter = MainActivity.getBluetoothAdapter();
 
         /*
         Disables the "Enter" button when there is no bluetooth enabled
