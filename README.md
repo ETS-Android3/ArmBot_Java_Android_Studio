@@ -65,7 +65,7 @@ In order to create a connection between the app and the Raspberry, you need to h
 
 * The message under the "Home" title outputs the state of the Bluetooth connection between the app and the Raspberry. 
 
-> ℹ **Information** : To use the app, you'll need to enable Bluetooth and the localisation.
+> ℹ **Information** : To use the app, you'll need to enable Bluetooth and allow the localisation.
 
 * Click on the <img width="25" height="25" src="https://user-images.githubusercontent.com/71266159/151390232-fd6ead72-5359-4c4c-8f66-151f76a996b7.PNG"> button to enable the Bluetooth if not already enabled. 
 
