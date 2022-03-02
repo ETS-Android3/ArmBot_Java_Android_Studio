@@ -76,5 +76,3 @@ In order to create a connection between the app and the Raspberry, you need to h
 * Click on the "Enter" button to go to the controllers.
 
 > ℹ **Note** : The top buttons enables to control the arm; the bottom ones control the robot gripper.
-
-* To change the robot speed or other settings, click on the <img width="25" height="25" src="https://user-images.githubusercontent.com/71266159/151392768-65b559d2-46be-4eb0-9f08-6bf0912d31e6.PNG"> button and select "Settings".
